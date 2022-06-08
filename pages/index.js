@@ -1,30 +1,38 @@
+import utilStyles from "./index.module.css";
 import Link from "next/link";
-import axios from "axios";
+import Head from "next/head";
 
-import styles from "./index.module.css";
+
+import { getPageData } from "../lib/markdown";
 
 export async function getStaticProps() {
-  const { data } = await axios.get("https://api.magicthegathering.io/v1/cards");
+  const pageData = await getPageData("index");
 
   return {
     props: {
-      cards: data.cards
+        pageData
     }
   };
 }
 
-export default function Home({ cards }) {
+export default function Index({ pageData }) {
   return (
-    <div className={styles.root}>
-      {cards.map(({ id, imageUrl }) => (
-        <div key={id} className={styles.card}>
-          <Link href={`/cards/${id}`}>
-            <a>
-              <img src={imageUrl} alt="" />
-            </a>
-          </Link>
+    <div>
+
+      <article>
+        <h1 className={utilStyles.headingXl}>{pageData.homeTitle}</h1>
+        <div className={utilStyles.lightText}>
+          {pageData.homeSubtitle}
         </div>
-      ))}
+        <p>
+          {pageData.homeDescription}
+        </p>
+        <Link href='/gallery/'>
+          <button className={utilStyles.buttonPrimary}>
+            {pageData.buttonText}
+          </button>
+        </Link>
+      </article>
     </div>
   );
 }
