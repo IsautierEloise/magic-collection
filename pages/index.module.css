@@ -1,17 +1,23 @@
 /* Home */
 .headingXl {    
+  color: #eaeaea;
   font-size: 32px;
   margin: 0 0 .5rem 0
 }
 .lightText{
   font-size: 22px;
-  color: #757575;
+  color: #b5b5b5;
   margin-bottom: 2rem;
 }
 
+
+@media (min-width: 480px) {
+  .lightText { font-size: 18px; }
+}
+
 .buttonPrimary{
-  background: #354259;
-  color: white;
+  background: #ffffff;
+  color: rgb(66, 66, 66);
 }
 
 /* Cards */

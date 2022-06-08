@@ -9,8 +9,14 @@ p {
     font-size: 18px;
     line-height: 28px;
     margin-bottom: 2rem;
-    color: #343434;
+    color: #eaeaea;
 }
+
+
+@media (min-width: 480px) {
+  p { font-size: 1rem; }
+}
+
 
 button {
   font-size: 18px;
