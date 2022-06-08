@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mui/material": "^5.8.3",
     "axios": "0.26.1",
     "cypress": "^10.0.3",
     "framer-motion": "^6.3.10",
