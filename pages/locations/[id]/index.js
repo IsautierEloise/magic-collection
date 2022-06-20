@@ -1,4 +1,5 @@
 import axios from "axios";
+import style from '../../index.module.css'
 
 export async function getStaticPaths() {
   const { data } = await axios.get(
@@ -29,13 +30,12 @@ export default function Location({ location }) {
   console.log(location)
   return (
     <div>
-      <h2>{location.name}</h2>
-      <div>
+      <div className={style.detailImage}>
         <img src={location.image} alt="" />
       </div>
+      <h1 className={style.headingXl}>{location.name}</h1>
       <p>
-        Région: 
-        {location.region} 
+        Region:  {location.region} 
       </p>
       <p>
         {location.description} 

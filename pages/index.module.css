@@ -1,12 +1,12 @@
 /* Home */
 .headingXl {    
-  color: #eaeaea;
+  color: #424242;
   font-size: 32px;
   margin: 0 0 .5rem 0
 }
 .lightText{
   font-size: 22px;
-  color: #b5b5b5;
+  color: #8a8a8a;
   margin-bottom: 2rem;
 }
 
@@ -16,12 +16,14 @@
 }
 
 .buttonPrimary{
+  cursor: pointer;
   background: #ffffff;
-  color: rgb(66, 66, 66);
+  color: #424242;
 }
 
 /* Cards */
-.cards {
+.cards {    
+  margin-top: 3rem;
   display: grid; 
   grid-template-columns: repeat(2, 1fr); 
   gap: 1rem; 
@@ -38,13 +40,11 @@
   .cards { grid-template-columns: repeat(4, 1fr); }
 }
 .cards .card {
+  cursor: pointer;
   background-color: #eaeaea;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  height: 100%;
+  box-shadow: 0px 1px 5px 0px #676767;
   border-radius: .25rem;
-}
-
-.cards .card:hover {
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 .cards .card .cardImg {
@@ -52,9 +52,28 @@
   border-top-right-radius: .25rem;
   width: auto;
 }
+.cards .card .cardText {
+  padding: 1rem;
+}
+
 .cards .card .cardTitle {
   font-size: 1rem;
   color: #343434;
-  padding: 1rem;
   margin: 0;
 }
+
+.pagination{    
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem
+}
+
+.detailImage{
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 480px) {
+   .detailImage img{ margin-bottom: 3rem }
+}
+
